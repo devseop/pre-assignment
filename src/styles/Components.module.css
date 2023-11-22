@@ -24,3 +24,15 @@
   color: rgba(34, 34, 34, 0.6);
   font-size: 11px;
 }
+
+.help {
+  font-size: 13px;
+}
+
+.success {
+  color: rgba(26, 186, 100, 1);
+}
+
+.error {
+  color: rgba(255, 67, 67, 0.8);
+}

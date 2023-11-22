@@ -1,4 +1,5 @@
 import React from 'react';
+import HelpMsg from './HelpMsg';
 import styles from '../styles/Components.module.css';
 
 interface InputProps {
@@ -9,6 +10,7 @@ interface InputProps {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isValid: () => boolean;
 }
 
 function Input({
@@ -19,6 +21,7 @@ function Input({
   name,
   value,
   onChange,
+  isValid,
 }: InputProps) {
   return (
     <div className={styles.input_container}>
@@ -33,6 +36,7 @@ function Input({
         onChange={onChange}
         required
       />
+      {value.length > 0 && <HelpMsg isValid={isValid()} />}
     </div>
   );
 }
