@@ -7,6 +7,9 @@ const initialState: IUserState = {
   logInLoading: false,
   logInDone: false,
   logInError: null,
+  logOutLoading: false,
+  logOutDone: false,
+  logOutError: null,
   userInfo: null,
 };
 
@@ -20,6 +23,7 @@ const userSlice = createSlice({
       state.logInError = null;
     },
     logInSuccess(state, action: PayloadAction<IUserInfo>) {
+      console.log('logInSuccess', state);
       state.logInLoading = false;
       state.logInDone = true;
       state.userInfo = action.payload;
@@ -29,10 +33,26 @@ const userSlice = createSlice({
       const errorMessage =
         action.payload.message || '로그인 중 오류가 발생했습니다.';
       state.logInError = new Error(errorMessage);
-      console.log(errorMessage);
+    },
+    logOutRequest(state) {
+      state.logInLoading = true;
+      state.logOutDone = false;
+      state.logInError = null;
+    },
+    logOutSuccess(state) {
+      state.logInDone = false;
+      state.logOutLoading = false;
+      state.logOutDone = true;
+      state.userInfo = null;
+    },
+    logOutFailure(state, action: PayloadAction<AxiosError>) {
+      state.logOutLoading = false;
+      const errorMessage =
+        action.payload.message || '로그인 중 오류가 발생했습니다.';
+      state.logInError = new Error(errorMessage);
     },
   },
 });
 
-export const logInActions = userSlice.actions;
+export const userSignActions = userSlice.actions;
 export default userSlice.reducer;

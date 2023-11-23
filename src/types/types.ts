@@ -20,7 +20,10 @@ export interface IUserInfo {
 export interface IUserState {
   logInLoading: boolean;
   logInDone: boolean;
-  logInError: null | Error;
+  logInError: Error | null;
+  logOutLoading: boolean;
+  logOutDone: boolean;
+  logOutError: Error | null;
   userInfo: IUserInfo | null;
 }
 

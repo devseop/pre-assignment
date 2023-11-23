@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import Input from '../src/components/Input';
 import useInput from 'src/hooks/useInput';
 import * as checkInputVaild from 'src/utils/checkValidations';
-import { logInActions } from 'src/store/reducers/user';
+import { userSignActions } from 'src/store/reducers/user';
 import { RootState } from 'src/store/configureStore';
 
 import styles from '../src/styles/Sign.module.css';
@@ -32,7 +32,7 @@ function LogIn() {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const { email, password } = values;
-      dispatch(logInActions.logInRequest({ email, password }));
+      dispatch(userSignActions.logInRequest({ email, password }));
     },
     [values, dispatch],
   );
