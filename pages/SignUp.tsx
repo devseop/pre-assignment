@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 import Input from '../src/components/Input';
 import useInput from 'src/hooks/useInput';
 import * as checkInputVaild from 'src/utils/checkValidations';
@@ -32,7 +33,7 @@ function SignUp() {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/signUp', {
+      const response = await fetch('/api/registerUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -45,6 +46,7 @@ function SignUp() {
           businessNumber: values.businessNumber,
         }),
       });
+
       const data = await response.json();
 
       if (response.ok) {

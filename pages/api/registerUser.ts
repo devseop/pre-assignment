@@ -13,7 +13,7 @@ const createRichTextObject = (text: string) => ({
   rich_text: [{ text: { content: text } }],
 });
 
-async function signUp(userData: IUser) {
+async function registerUser(userData: IUser) {
   try {
     const token = CryptoJS.lib.WordArray.random(16).toString();
 
@@ -34,11 +34,9 @@ async function signUp(userData: IUser) {
     return { success: true };
   } catch (error) {
     console.error('Error adding user to database:', error);
-    return { success: true, error };
+    return { success: false, error };
   }
 }
-
-export { signUp };
 
 export default async function handler(
   req: NextApiRequest,
@@ -47,16 +45,19 @@ export default async function handler(
   if (req.method === 'POST') {
     try {
       const userData = req.body;
-      const result = await signUp(userData);
+      const result = await registerUser(userData);
+
       if (result.success) {
         res.status(200).json({
-          message: 'User registration successful.',
+          message: '회원가입이 성공적으로 완료됐습니다.',
         });
       } else {
-        res.status(500).json({ message: 'User registration failed.' });
+        res.status(500).json({ message: '회원가입에 실패했습니다.' });
       }
     } catch (error) {
-      res.status(500).json({ message: 'Server error.' });
+      res.status(500).json({
+        message: '서버에 에러가 생겼습니다. 고객센터에 문의해주세요.',
+      });
     }
   } else {
     res.status(405).json({ message: 'Method not allowed.' });

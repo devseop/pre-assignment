@@ -1,24 +1,41 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
 import Input from '../src/components/Input';
 import useInput from 'src/hooks/useInput';
 import * as checkInputVaild from 'src/utils/checkValidations';
+import { logInActions } from 'src/store/reducers/user';
+import { RootState } from 'src/store/configureStore';
 
 import styles from '../src/styles/Sign.module.css';
 
 function LogIn() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const { values, handleChange } = useInput({
     email: '',
     password: '',
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    //TODO: 로그인 버튼 클릭시 가상의 API를 호출하는 코드 작성 필요
-    router.push('/');
-  };
+  const { logInDone, userInfo } = useSelector((state: RootState) => state.user);
+
+  useEffect(() => {
+    if (logInDone) {
+      alert(`환영합니다. ${userInfo.username}님!`);
+      router.push('/');
+    }
+  }, [logInDone, router, userInfo?.username]);
+
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const { email, password } = values;
+      dispatch(logInActions.logInRequest({ email, password }));
+    },
+    [values, dispatch],
+  );
 
   const { checkValidation, validateEmail, validatePassword } = checkInputVaild;
 
