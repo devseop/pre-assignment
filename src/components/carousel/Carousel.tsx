@@ -39,7 +39,7 @@ export default function Carousel() {
   };
 
   return (
-    <section className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.carouselWrapper}>
         <button
           type="button"
@@ -70,6 +70,6 @@ export default function Carousel() {
           {currentIndex + 1} / {slideLength}
         </p>
       </div>
-    </section>
+    </div>
   );
 }
