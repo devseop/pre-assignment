@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/Navbar.module.css';
-
-import { AiOutlineMenu } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
+
+import UserProfile from './UserProfile';
+import SignButtons from './SignButtons';
 import { RootState } from 'src/store/configureStore';
+
+import styles from '../styles/Navbar.module.css';
+import { AiOutlineMenu } from 'react-icons/ai';
 
 function Navbar() {
   const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
@@ -28,41 +31,7 @@ function Navbar() {
             />
           </Link>
         </div>
-        {userInfo ? (
-          <div className={styles.right}>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <div>Avatar</div>
-              <span>{userInfo.username}</span>
-            </div>
-            <button>
-              <Link
-                href="/SignUp"
-                className={`${styles.button} ${styles.sign}`}
-              >
-                로그아웃
-              </Link>
-            </button>
-          </div>
-        ) : (
-          <div className={styles.right}>
-            <button>
-              <Link
-                href="/LogIn"
-                className={`${styles.button} ${styles.login}`}
-              >
-                로그인
-              </Link>
-            </button>
-            <button>
-              <Link
-                href="/SignUp"
-                className={`${styles.button} ${styles.sign}`}
-              >
-                회원가입
-              </Link>
-            </button>
-          </div>
-        )}
+        {userInfo ? <UserProfile /> : <SignButtons />}
       </header>
 
       {/* 사이드메뉴 */}

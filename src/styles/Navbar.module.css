@@ -62,6 +62,22 @@
   background-color: rgba(54, 128, 255, 0.05);
 }
 
+.userInfo {
+  color: rgba(34, 34, 34, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.userInfo div {
+  font-size: 24px;
+}
+
+.userInfo span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .sideMenu {
   position: fixed;
   top: 0;
