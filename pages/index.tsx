@@ -1,5 +1,7 @@
+import Carousel from '@components/carousel/Carousel';
+
 function Home() {
-  return <div>메인 페이지</div>;
+  return <Carousel />;
 }
 
 export default Home;
