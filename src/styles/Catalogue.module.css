@@ -23,14 +23,17 @@
 
 /* 카탈로그 목록 페이지 & 상세 페이지 공통 스타일 */
 .container {
-  max-width: 1080px;
-  margin: 80px auto 0;
+  display: flex;
+  margin: 80px auto;
+  justify-content: center;
+  gap: 40px;
 }
 
 .list {
+  max-width: 1080px;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4개 열  */
-  grid-template-rows: repeat(5, 1fr); /* 5개 행  */
+  /* grid-template-rows: repeat(5, 1fr); 5개 행  */
   gap: 16px;
 }
 
@@ -58,11 +61,12 @@
   justify-content: space-between;
 }
 
-.infoContainer span {
+.infoContainer p {
   color: rgba(34, 34, 34, 0.6);
   font-size: 12px;
   font-weight: 500;
   max-width: 100%;
+  height: 29px;
   overflow-wrap: break-word;
 }
 
@@ -79,12 +83,15 @@
   font-size: 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
   margin-top: 16px;
 }
 
 .infoDetail h5 {
+  color: rgba(54, 128, 255, 1);
+  font-size: 16px;
   font-weight: 600;
+  line-height: 1;
 }
 
 .hidden {
@@ -93,6 +100,8 @@
 
 /* 카탈로그 상세페이지 스타일 */
 .detail {
+  max-width: 1080px;
+  margin: 80px auto 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -207,4 +216,26 @@
   border-radius: 6px;
   width: 100px;
   height: 36px;
+}
+
+/* 페이지네이션 스타일 */
+.pagenationContainer {
+  padding: 80px 0 120px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.pageButton {
+  color: rgba(34, 34, 34, 1);
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 8px;
+}
+
+.selected {
+  color: rgba(54, 128, 255, 1);
+  font-weight: 600;
+  border-color: rgba(54, 128, 255, 1);
 }

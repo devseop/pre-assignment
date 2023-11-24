@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ICatalogue } from 'src/types/types';
-import styles from '../styles/Components.module.css';
+import styles from '../../styles/Catalogue.module.css';
 
 interface PaginationProps {
   catalogues: ICatalogue[];

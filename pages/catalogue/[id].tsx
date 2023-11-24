@@ -44,7 +44,7 @@ export default function CatalogueDetail({ catalogueItem }: any) {
   };
 
   return (
-    <div className={`${styles.container} ${styles.detail}`}>
+    <div className={styles.detail}>
       <div className={styles.imageWrapper}>
         <picture className={styles.representativeImage}>
           <Image

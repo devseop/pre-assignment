@@ -28,7 +28,7 @@ export default function CatalogueItem({ item }: ICatalogueItem) {
       />
       <div className={styles.infoContainer}>
         <div>
-          <span>{item.product_name}</span>
+          <p>{item.product_name}</p>
           <h3>{item.hotel}</h3>
         </div>
         <div className={styles.infoDetail}>
