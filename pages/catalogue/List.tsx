@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 
@@ -9,10 +9,18 @@ import { loadCatalogueList } from 'src/lib/loadCatalogueData';
 import styles from '../../src/styles/Catalogue.module.css';
 
 import { ICatalogueList } from 'src/types/types';
+import Pagenation from '@components/Pagenation';
 
 export default function CatalogueList({ catalogues }: ICatalogueList) {
   const router = useRouter();
   const isLoggedIn = useSelector((state: RootState) => state.user.logInDone);
+
+  // 페이지네이션을 위한 const
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerpage = 20;
+  const indexOfLastItem = currentPage * itemsPerpage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerpage;
+  const currentItems = catalogues.slice(indexOfFirstItem, indexOfLastItem);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -24,13 +32,19 @@ export default function CatalogueList({ catalogues }: ICatalogueList) {
   });
 
   return (
-    <ul className={`${styles.container} ${styles.list}`}>
-      {catalogues.map(item => (
-        <li key={item._id} className={styles.card}>
-          <CatalogueItem item={item} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className={`${styles.container} ${styles.list}`}>
+        {currentItems.map(item => (
+          <li key={item._id} className={styles.card}>
+            <CatalogueItem item={item} />
+          </li>
+        ))}
+      </ul>
+      <Pagenation
+        catalogues={catalogues}
+        onPageChange={page => setCurrentPage(page)}
+      />
+    </>
   );
 }
 
