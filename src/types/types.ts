@@ -52,3 +52,10 @@ export interface ICatalogue {
 export interface ICatalogueList {
   catalogues: ICatalogue[];
 }
+
+export interface IFilters {
+  category: string;
+  priceRange: { min: number; max: number };
+  roomTypes: string[];
+  grades: string[];
+}

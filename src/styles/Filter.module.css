@@ -1,0 +1,78 @@
+.filterContainer {
+  width: 360px;
+}
+
+.filterWrapper {
+  overflow-y: auto;
+  position: sticky;
+  top: 161px;
+  max-height: calc((100vh - 54px) - 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: rgba(34, 34, 34, 0.6);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.priceWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.price {
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 16px;
+  width: 50%;
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.values input {
+  cursor: pointer;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.button {
+  font-size: 17px;
+  font-weight: 600;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.primary {
+  color: white;
+  background-color: rgba(54, 128, 255, 1);
+}
+
+.secondary {
+  color: white;
+  background-color: rgba(34, 34, 34, 0.4);
+}
