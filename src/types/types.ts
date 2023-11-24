@@ -48,3 +48,7 @@ export interface ICatalogue {
   description: string;
   images: string[];
 }
+
+export interface ICatalogueList {
+  catalogues: ICatalogue[];
+}

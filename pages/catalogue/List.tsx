@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
+
 import CatalogueItem from '@components/catalogue/CatalogueItem';
 import { RootState } from 'src/store/configureStore';
-import { ICatalogue } from 'src/types/types';
+import { loadCatalogueList } from 'src/lib/loadCatalogueData';
 
 import styles from '../../src/styles/Catalogue.module.css';
-import { useRouter } from 'next/router';
-import loadCatalogueData from 'src/lib/loadCatalogueData';
 
-interface ICatalogueList {
-  catalogues: ICatalogue[];
-}
+import { ICatalogueList } from 'src/types/types';
 
 export default function CatalogueList({ catalogues }: ICatalogueList) {
   const router = useRouter();
@@ -19,16 +17,16 @@ export default function CatalogueList({ catalogues }: ICatalogueList) {
   useEffect(() => {
     if (!isLoggedIn) {
       alert(
-        '해당 페이지는 로그인 후 접근할 수 있습니다. 로그인을 진행해주세요.',
+        '해당 페이지는 로그인 후 이용할 수 있습니다. 로그인을 진행해주세요.',
       );
       router.push('/LogIn');
     }
   });
 
   return (
-    <ul className={styles.container}>
+    <ul className={`${styles.container} ${styles.list}`}>
       {catalogues.map(item => (
-        <li key={item._id}>
+        <li key={item._id} className={styles.card}>
           <CatalogueItem item={item} />
         </li>
       ))}
@@ -36,12 +34,14 @@ export default function CatalogueList({ catalogues }: ICatalogueList) {
   );
 }
 
-export const getStaticProps = async () => {
-  const catalogues = await loadCatalogueData();
+export async function getStaticProps(): Promise<{
+  props: { catalogues: ICatalogueList };
+}> {
+  const catalogues = await loadCatalogueList();
 
   return {
     props: {
       catalogues,
     },
   };
-};
+}

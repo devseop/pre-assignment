@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CarouselItem from './CarouselItem';
-import { INDEX_BANNER_IMAGES } from 'src/constant/constant';
 
 import styles from '../../styles/Carousel.module.css';
 import {
@@ -8,10 +7,14 @@ import {
   BiSolidCaretRightCircle,
 } from 'react-icons/bi';
 
-export default function Carousel() {
+interface ICarousel {
+  data: string[];
+}
+
+export default function Carousel({ data }: ICarousel) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLUListElement>(null);
-  const slideLength = INDEX_BANNER_IMAGES.length;
+  const slideLength = data.length;
 
   // 자동 슬라이드 기능
   useEffect(() => {
@@ -60,9 +63,9 @@ export default function Carousel() {
           <BiSolidCaretRightCircle />
         </button>
         <ul ref={carouselRef} className={styles.carousel}>
-          {INDEX_BANNER_IMAGES.map(obj => (
-            <li key={obj.id} className={styles.carouselItem}>
-              <CarouselItem data={obj.img} />
+          {data.map((item, index) => (
+            <li key={index} className={styles.carouselItem}>
+              <CarouselItem data={item} />
             </li>
           ))}
         </ul>

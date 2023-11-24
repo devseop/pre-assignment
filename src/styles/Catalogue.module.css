@@ -1,3 +1,4 @@
+/* 카탈로그 진입 배너 스타일 */
 .banner {
   width: 1032px;
   height: 80px;
@@ -20,21 +21,26 @@
   font-size: 24px;
 }
 
+/* 카탈로그 목록 페이지 & 상세 페이지 공통 스타일 */
 .container {
   max-width: 1080px;
   margin: 80px auto 0;
+}
+
+.list {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4개 열  */
   grid-template-rows: repeat(5, 1fr); /* 5개 행  */
   gap: 16px;
 }
 
-.container li {
+.card {
   display: flex;
   flex-direction: column;
   gap: 12px;
   border: 1px solid rgba(34, 34, 34, 0.2);
   border-radius: 6px;
+  width: calc(1080px / 4 - 12px);
 }
 
 .thumbnail {
@@ -45,20 +51,28 @@
 }
 
 .infoContainer {
-  padding: 0px 16px 16px;
+  padding: 8px 16px 16px;
   line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .infoContainer span {
   color: rgba(34, 34, 34, 0.6);
   font-size: 12px;
   font-weight: 500;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .infoContainer h3 {
   font-size: 15px;
   font-weight: 600;
   line-height: 1.4;
+  max-width: 100%;
+  height: 44px;
+  overflow-wrap: break-word;
 }
 
 .infoDetail {
@@ -71,4 +85,126 @@
 
 .infoDetail h5 {
   font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 카탈로그 상세페이지 스타일 */
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.imageWrapper {
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 8px;
+  width: 100%;
+  height: 480px;
+  max-height: 480px;
+  position: relative;
+}
+
+.representativeImage {
+  width: calc(1080px - 26%);
+  height: 480px;
+}
+
+.representativeImage img {
+  /* width: 100vw;
+  height: 45vh; */
+  object-fit: cover;
+}
+
+.subImages {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  height: 480px;
+}
+
+.subImages li {
+  height: 236px;
+}
+
+.subImages li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hotelInfoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotelTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hotelTitle span {
+  color: rgba(34, 34, 34, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.hotelTitle h1 {
+  color: rgba(34, 34, 34, 1);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.gradeAndType {
+  color: rgba(34, 34, 34, 0.8);
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.hotelDesc {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 24px 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(34, 34, 34, 0.2);
+}
+
+.etcWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.etc {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.etc div {
+  font-size: 16px;
+}
+
+.slideViewButton {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  background: var(--grayscale-10, #fff);
+  border: 1px solid rgba(34, 34, 34, 0.3);
+  border-radius: 6px;
+  width: 100px;
+  height: 36px;
 }

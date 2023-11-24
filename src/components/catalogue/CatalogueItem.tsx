@@ -16,7 +16,7 @@ export default function CatalogueItem({ item }: ICatalogueItem) {
   const isLoggedIn = useSelector((state: RootState) => state.user.logInDone);
 
   return (
-    <Link href={`catalogue/${item._id}`} passHref>
+    <Link href={`/catalogue/${item._id}`} passHref>
       <Image
         className={styles.thumbnail}
         src={item.representative_image}
@@ -27,13 +27,17 @@ export default function CatalogueItem({ item }: ICatalogueItem) {
         alt={item.product_name}
       />
       <div className={styles.infoContainer}>
-        <span>{item.hotel}</span>
-        <h3>{item.product_name}</h3>
+        <div>
+          <span>{item.product_name}</span>
+          <h3>{item.hotel}</h3>
+        </div>
         <div className={styles.infoDetail}>
           <h4>
             {item.grade} STAR ・ {item.room_type.toUpperCase()}
           </h4>
-          <h5>{isLoggedIn ? `${item.price} ${item.currency}` : ''}</h5>
+          <h5 className={`${isLoggedIn ? '' : `${styles.hidden}`}`}>
+            {item.price} {item.currency}
+          </h5>
         </div>
       </div>
     </Link>
