@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 
 import Input from '../src/components/Input';
 import useInput from 'src/hooks/useInput';
-import * as checkInputVaild from 'src/utils/checkValidations';
-import { userSignActions } from 'src/store/reducers/user';
+import * as checkInputVaild from 'src/lib/checkValidations';
+import { userSignActions } from 'src/store/reducers/userReducer';
 import { RootState } from 'src/store/configureStore';
 
 import styles from '../src/styles/Sign.module.css';

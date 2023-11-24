@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import Input from '../src/components/Input';
 import useInput from 'src/hooks/useInput';
-import * as checkInputVaild from 'src/utils/checkValidations';
+import * as checkInputVaild from 'src/lib/checkValidations';
 
 import styles from '../src/styles/Sign.module.css';
 

@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { userSignActions } from 'src/store/reducers/user';
+import { userSignActions } from 'src/store/reducers/userReducer';
 import { RootState } from 'src/store/configureStore';
 
-import styles from '../styles/Navbar.module.css';
+import styles from '../../styles/Navbar.module.css';
 import { AiFillSmile } from 'react-icons/ai';
 
 export default function UserProfile() {

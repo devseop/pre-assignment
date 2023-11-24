@@ -7,7 +7,7 @@ import UserProfile from './UserProfile';
 import SignButtons from './SignButtons';
 import { RootState } from 'src/store/configureStore';
 
-import styles from '../styles/Navbar.module.css';
+import styles from '../../styles/Navbar.module.css';
 import { AiOutlineMenu } from 'react-icons/ai';
 
 function Navbar() {

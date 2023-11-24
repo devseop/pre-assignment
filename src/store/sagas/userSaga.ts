@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { all, fork, put, takeLatest, call } from 'redux-saga/effects';
 import axios, { AxiosError, AxiosResponse } from 'axios';
-import { userSignActions } from '../reducers/user';
+import { userSignActions } from '../reducers/userReducer';
 import { ILoginPayload } from 'src/types/types';
 
 function logInAPI(data: ILoginPayload) {

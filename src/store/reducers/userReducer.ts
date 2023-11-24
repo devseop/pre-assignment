@@ -23,7 +23,6 @@ const userSlice = createSlice({
       state.logInError = null;
     },
     logInSuccess(state, action: PayloadAction<IUserInfo>) {
-      console.log('logInSuccess', state);
       state.logInLoading = false;
       state.logInDone = true;
       state.userInfo = action.payload;

@@ -1,6 +1,6 @@
 import { HYDRATE } from 'next-redux-wrapper';
 import { combineReducers } from '@reduxjs/toolkit';
-import user from './user';
+import user from './userReducer';
 
 const rootReducer = (state: any, action: any) => {
   // console.log('types: ', typeof state, typeof action);
