@@ -31,3 +31,20 @@ export interface ILoginPayload {
   email: string;
   password: string;
 }
+
+export interface ICatalogue {
+  _id: string;
+  product_name: string;
+  category: string;
+  grade: string;
+  phone: string;
+  email: string;
+  address: string;
+  room_type: string;
+  price: string;
+  currency: string;
+  hotel: string;
+  representative_image: string;
+  description: string;
+  images: string[];
+}

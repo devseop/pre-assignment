@@ -1,0 +1,74 @@
+.banner {
+  width: 1032px;
+  height: 80px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid rgba(34, 34, 34, 0.2); */
+  background-color: rgba(54, 128, 255, 0.4);
+  border-radius: 4px;
+}
+
+.banner p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.banner div {
+  font-size: 24px;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4개 열  */
+  grid-template-rows: repeat(5, 1fr); /* 5개 행  */
+  gap: 16px;
+}
+
+.container li {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid rgba(34, 34, 34, 0.2);
+  border-radius: 6px;
+}
+
+.thumbnail {
+  color: transparent;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.infoContainer {
+  padding: 0px 16px 16px;
+  line-height: 1.2;
+}
+
+.infoContainer span {
+  color: rgba(34, 34, 34, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.infoContainer h3 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.infoDetail {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.infoDetail h5 {
+  font-weight: 600;
+}
