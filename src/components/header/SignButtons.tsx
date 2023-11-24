@@ -8,12 +8,12 @@ export default function SignButtons() {
     <div className={styles.right}>
       <button>
         <Link href="/LogIn" className={`${styles.button} ${styles.login}`}>
-          로그인
+          Log In
         </Link>
       </button>
       <button>
         <Link href="/SignUp" className={`${styles.button} ${styles.sign}`}>
-          회원가입
+          Sign Up
         </Link>
       </button>
     </div>

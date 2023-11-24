@@ -27,7 +27,7 @@ export default function UserProfile() {
         onClick={handleLogOut}
         className={`${styles.button} ${styles.sign}`}
       >
-        로그아웃
+        Log Out
       </button>
     </div>
   );
