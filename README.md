@@ -230,7 +230,7 @@ pre-assignment
         <li>[필터] 필터 옵션값 추출 함수</li>
             https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/src/lib/getFilterValues.ts#L3-L9
         <li>[필터] 필터링 로직</li>
-            https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/pages/catalogue/List.tsx#L45C1-L65
+            https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/pages/catalogue/List.tsx#L45-L68
         <li>[페이지네이션] 페이지 계산 및 총 페이지 초과 방지</li>
             https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/src/components/catalogue/Pagenation.tsx#L24-L33
     </ul>
