@@ -155,7 +155,7 @@ pre-assignment
       <li>UI</li>
           https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/src/components/carousel/Carousel.tsx#L45-L76
       <li>동작 코드</li>
-          https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/src/components/carousel/Carousel.tsx#L19-L4   
+          https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/src/components/carousel/Carousel.tsx#L4-L19   
       <li>모달 컴포넌트</li>
       https://github.com/devseop/pre-assignment/blob/ba948670d1f46b0820cda8348c94330d8e6ea0d7/src/components/Modal.tsx#L11-L25
     </ul>
