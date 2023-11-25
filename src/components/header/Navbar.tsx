@@ -22,7 +22,7 @@ function Navbar() {
             <AiOutlineMenu />
           </button>
           <Link href="/">
-            {/* TODO: 로고 이미지 추가 필요 */}
+            {/* 로고 이미지  */}
             <Image
               src="/favicon.ico"
               alt="Vercel Logo"
